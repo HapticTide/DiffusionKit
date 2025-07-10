@@ -28,7 +28,7 @@ Add this package into your project.
 
 ```swift
 dependencies: [
-    .package(url: "https://gitlab.webullbroker.com:5253/yangguang/DiffusionKit.git", from: "main"),
+    .package(url: "https://gitlab.webullbroker.com:5253/yangguang/DiffusionKit.git", branch: "spm"),
 ]
 ```
 
