@@ -2,8 +2,6 @@
 
 DiffusionKit is a high-performance library designed for creating vibrant, animated mesh like gradient views. It offers powerful functionality and preset options as an enhanced alternative to SwiftUI’s MeshGradientView.
 
-🥳 LAB color models are now used, enabling smooth animated transitions and seamless color interpolation.
-
 <p align="center">
   <img src="./Example/Screenshot_iOS.png" alt="iOS" width="240"/>
   <img src="./Example/Screenshot_macOS.png" alt="macOS" width="800"/>
@@ -28,7 +26,7 @@ Add this package into your project.
 
 ```swift
 dependencies: [
-    .package(url: "https://gitlab.webullbroker.com:5253/yangguang/DiffusionKit.git", branch: "spm"),
+    .package(url: "https://github.com/sunimp/DiffusionKit.git", branch: "main"),
 ]
 ```
 
