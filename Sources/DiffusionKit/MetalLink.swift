@@ -44,7 +44,9 @@ class MetalLink: DisplayLinkDelegate {
         
         // 禁用 EDR 并设置标准 SDR 配置，防止前景视图变暗
         metalLayer.pixelFormat = .bgra8Unorm
-        metalLayer.wantsExtendedDynamicRangeContent = false
+        if #available(iOS 16.0, macOS 13.0, tvOS 16.0, *) {
+            metalLayer.wantsExtendedDynamicRangeContent = false
+        }
         metalLayer.colorspace = CGColorSpace(name: CGColorSpace.sRGB)
         
         self.metalLayer = metalLayer
