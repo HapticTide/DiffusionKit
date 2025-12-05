@@ -5,6 +5,7 @@
 //  Created by Sun on 2025/7/10.
 //
 
+import CoreGraphics
 import Foundation
 import MetalKit
 import MSDisplayLink
@@ -40,6 +41,12 @@ class MetalLink: DisplayLinkDelegate {
         metalLayer.framebufferOnly = false
         metalLayer.isOpaque = false
         metalLayer.presentsWithTransaction = false
+        
+        // 禁用 EDR 并设置标准 SDR 配置，防止前景视图变暗
+        metalLayer.pixelFormat = .bgra8Unorm
+        metalLayer.wantsExtendedDynamicRangeContent = false
+        metalLayer.colorspace = CGColorSpace(name: CGColorSpace.sRGB)
+        
         self.metalLayer = metalLayer
         
         displayLink.delegatingObject(self)
