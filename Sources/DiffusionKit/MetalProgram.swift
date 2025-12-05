@@ -163,7 +163,12 @@ private enum MetalProgram: String {
         }
     
         float3 color_with_out_alpha = float3_lab_to_rgb(col.xyz);
-        float4 color = float4(color_with_out_alpha, col.w);
+        float alpha = col.w;
+        
+        // 将半透明颜色与白色背景混合，生成不透明像素
+        // 避免 iOS EDR headroom 导致前景视图变暗
+        float3 blended_color = color_with_out_alpha * alpha + float3(1.0, 1.0, 1.0) * (1.0 - alpha);
+        float4 color = float4(blended_color, 1.0);
     
         output.write(clamp(color, 0.0, 1.0), gid);
     }
