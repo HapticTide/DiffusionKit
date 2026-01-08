@@ -149,6 +149,6 @@ view.setColors(MyPresets.white)
 
 ## License
 
-This project is licensed under the Webull License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 The shader code originates from [this source](https://github.com/ArthurGuibert/SwiftUI-MulticolorGradient). Consequently, the name of the original author has been credited in the license file.
