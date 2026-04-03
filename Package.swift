@@ -12,18 +12,17 @@ let package = Package(
     ],
     products: [
         .library(name: "DiffusionKit", targets: ["DiffusionKit"]),
-        .library(name: "ColorVector", targets: ["ColorVector"]),
-        .library(name: "SpringInterpolation", targets: ["SpringInterpolation"]),
-        .library(name: "MSDisplayLink", targets: ["MSDisplayLink"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/HapticTide/ColorVector", exact: "1.0.5"),
+        .package(url: "https://github.com/HapticTide/MSDisplayLink", exact: "2.1.0"),
+        .package(url: "https://github.com/HapticTide/SpringInterpolation", exact: "2.1.0"),
     ],
     targets: [
         .target(name: "DiffusionKit", dependencies: [
-            "ColorVector",
-            "SpringInterpolation",
-            "MSDisplayLink"
+            .product(name: "ColorVector", package: "ColorVector"),
+            .product(name: "MSDisplayLink", package: "MSDisplayLink"),
+            .product(name: "SpringInterpolation", package: "SpringInterpolation"),
         ]),
-        .target(name: "ColorVector"),
-        .target(name: "SpringInterpolation"),
-        .target(name: "MSDisplayLink"),
     ]
 )
